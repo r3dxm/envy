@@ -3,63 +3,58 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import Colors from "../libraries/Colors";
 import { useNavigation } from "@react-navigation/native";
 
-const PopularUserCard = ({ name, num_posts, num_comments }) => {
+const PopularUserCard = ({ name, top_comment }) => {
 	const navigation = useNavigation();
+	name = name.toUpperCase();
 	return (
 		<TouchableOpacity
 			onPress={() => navigation.replace("UserScreen")}
-			style={styles.cardContainer}>
-			<View style={styles.cardTextArea}>
-				<Text style={styles.cardTextName}>{name}</Text>
-				<Text style={styles.cardText}>{num_posts} posts today</Text>
-				<Text style={styles.cardText}>{num_comments} comments today</Text>
+			style={styles.container}>
+			<View style={styles.info}>
+				<Image
+					style={styles.infoImage}
+					source={{ uri: "https://reactjs.org/logo-og.png" }}
+				/>
+				<Text style={styles.infoName}>{name}</Text>
 			</View>
-			<Image
-				style={styles.cardImage}
-				source={{ uri: "https://reactjs.org/logo-og.png" }}
-			/>
+			<Text style={styles.topComment}>{top_comment}</Text>
 		</TouchableOpacity>
 	);
 };
 
 const styles = StyleSheet.create({
-	cardContainer: {
-		borderRadius: 10,
-		// width: "80%",
-		width: "90%",
-		display: "flex",
-		flexDirection: "row",
-		justifyContent: "space-between",
-		backgroundColor: Colors.red,
+	container: {
 		margin: 5,
+		width: "97%",
+		borderRadius: 15,
+		backgroundColor: Colors.orange,
 	},
-	cardTextArea: {
-		paddingBottom: 10,
-		paddingTop: 10,
+	info: {
+		flexDirection: "row",
+		alignSelf: "center",
+		alignItems: "center",
+		width: "98%",
+		height: 70,
+		margin: 5,
 		paddingLeft: 10,
-	},
-
-	cardTextName: {
+		borderRadius: 15,
 		backgroundColor: Colors.white,
-		padding: 5,
-		fontSize: 20,
-		borderRadius: 10,
-		textAlign: "center",
-		fontWeight: "bold",
-		marginBottom: 30,
 	},
-	cardText: {
-		// padding: 2,
-		fontSize: 16,
+	infoImage: {
+		width: 50,
+		height: 50,
+		borderRadius: 15,
+	},
+	infoName: {
+		paddingLeft: 10,
+		color: Colors.orange,
 		fontWeight: "bold",
+		fontSize: 18,
+	},
+	topComment: {
 		color: Colors.white,
-	},
-	cardImage: {
-		width: 100,
-		height: 100,
-		marginRight: 10,
+		paddingLeft: 20,
 		marginBottom: 10,
-		marginTop: 10,
 	},
 });
 export default PopularUserCard;

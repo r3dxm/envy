@@ -13,23 +13,21 @@ function LoginScreen(props) {
 	const navigation = useNavigation();
 	return (
 		<View style={styles.container}>
-			<Text style={styles.logoTop}>ENVY</Text>
-			<Text style={styles.logoBottom}>ENVY</Text>
-			<TextInput placeholder="username" style={styles.input} />
+			<Text style={styles.logo}>ENVY</Text>
 			<TextInput
-				placeholder="password"
+				placeholder="email"
+				placeholderTextColor={Colors.orange}
 				style={styles.input}
-				secureTextEntry={true}
+			/>
+			<TextInput
+				placeholder="confirm email"
+				placeholderTextColor={Colors.orange}
+				style={styles.input}
 			/>
 			<TouchableOpacity
 				onPress={() => navigation.replace("FeedScreen")}
 				style={styles.loginButton}>
-				<Text style={styles.loginButtonText}>Login</Text>
-			</TouchableOpacity>
-			<TouchableOpacity
-				onPress={() => navigation.replace("FeedScreen")}
-				style={styles.noAccountButton}>
-				<Text style={styles.noAccountButtonText}>Give me an envy account</Text>
+				<Text style={styles.loginButtonText}>Get login link</Text>
 			</TouchableOpacity>
 		</View>
 	);
@@ -42,37 +40,32 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		backgroundColor: Colors.white,
 	},
-	logoTop: {
-		margin: 0,
-		marginTop: 150,
+	logo: {
+		marginTop: 120,
+		marginBottom: 50,
 		padding: 0,
-		fontSize: 96,
+		fontSize: 150,
 		fontWeight: "bold",
-		color: Colors.logored,
-	},
-	logoBottom: {
-		margin: -40,
-		padding: 0,
-		fontSize: 96,
-		fontWeight: "bold",
-		color: Colors.logoblue,
-		transform: [{ rotate: "180deg" }],
+		color: Colors.black,
+		transform: [{ rotate: "90deg" }],
 	},
 	input: {
-		marginTop: 30,
+		marginTop: 20,
 		height: 50,
 		width: "80%",
 		paddingLeft: 20,
 		borderRadius: 10,
-		backgroundColor: Colors.grey,
-		color: Colors.black,
+		backgroundColor: Colors.white,
+		color: Colors.red,
+		fontWeight: "bold",
+		fontSize: 15,
 	},
 	loginButton: {
 		marginTop: 20,
 		height: 50,
 		width: "80%",
 		borderRadius: 10,
-		backgroundColor: Colors.black,
+		backgroundColor: Colors.orange,
 		alignItems: "center",
 		justifyContent: "center",
 	},
