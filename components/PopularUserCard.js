@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 		margin: 5,
 		width: "97%",
 		borderRadius: 15,
-		backgroundColor: Colors.orange,
+		backgroundColor: Colors.pastel_pink,
 	},
 	info: {
 		flexDirection: "row",
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 	},
 	infoName: {
 		paddingLeft: 10,
-		color: Colors.orange,
+		color: Colors.pastel_pink,
 		fontWeight: "bold",
 		fontSize: 18,
 	},

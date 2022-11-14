@@ -8,6 +8,8 @@ import {
 import LoginScreen from "./screens/LoginScreen";
 import FeedScreen from "./screens/FeedScreen";
 import UserScreen from "./screens/UserScreen";
+import SearchScreen from "./screens/SearchScreen";
+import SettingsScreen from "./screens/SettingsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +31,16 @@ export default function App() {
 					options={{ headerShown: false }}
 					name="UserScreen"
 					component={UserScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="SearchScreen"
+					component={SearchScreen}
+				/>
+				<Stack.Screen
+					options={{ headerShown: false }}
+					name="SettingsScreen"
+					component={SettingsScreen}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

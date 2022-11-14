@@ -15,19 +15,19 @@ function LoginScreen(props) {
 		<View style={styles.container}>
 			<Text style={styles.logo}>ENVY</Text>
 			<TextInput
-				placeholder="email"
-				placeholderTextColor={Colors.orange}
+				placeholder="phone number"
+				placeholderTextColor={Colors.pastel_pink}
 				style={styles.input}
 			/>
 			<TextInput
-				placeholder="confirm email"
-				placeholderTextColor={Colors.orange}
+				placeholder="confirm phone number"
+				placeholderTextColor={Colors.pastel_pink}
 				style={styles.input}
 			/>
 			<TouchableOpacity
 				onPress={() => navigation.replace("FeedScreen")}
 				style={styles.loginButton}>
-				<Text style={styles.loginButtonText}>Get login link</Text>
+				<Text style={styles.loginButtonText}>Send me the login link</Text>
 			</TouchableOpacity>
 		</View>
 	);
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
 		paddingLeft: 20,
 		borderRadius: 10,
 		backgroundColor: Colors.white,
-		color: Colors.red,
+		color: Colors.pastel_pink,
 		fontWeight: "bold",
 		fontSize: 15,
 	},
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
 		height: 50,
 		width: "80%",
 		borderRadius: 10,
-		backgroundColor: Colors.orange,
+		backgroundColor: Colors.pastel_pink,
 		alignItems: "center",
 		justifyContent: "center",
 	},

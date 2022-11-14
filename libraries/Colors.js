@@ -6,6 +6,7 @@ const Colors = {
 	black: "#000000",
 	white: "#ffffff",
 	grey: "#ece6e6",
+	pastel_pink: "#bb8c9d",
 };
 
 export default Colors;

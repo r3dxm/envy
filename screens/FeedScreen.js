@@ -10,7 +10,7 @@ const FeedScreen = () => {
 	return (
 		<View style={styles.container}>
 			<Header />
-			<ScrollView showsVerticalScrollIndicator={false}>
+			<ScrollView showsVerticalScrollIndicator={false} decelerationRate={0.95}>
 				<View style={styles.CardLoop}>
 					<PopularUserCard name="test mctest" top_comment="top comment here" />
 					<PopularUserCard name="test mctest" top_comment="top comment here" />

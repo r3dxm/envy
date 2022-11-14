@@ -1,14 +1,25 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Colors from "../libraries/Colors";
-import Entypo from "@expo/vector-icons/Entypo";
+import AntDesign from "@expo/vector-icons/AntDesign";
 
 function NavBar(props) {
+	const navigation = useNavigation();
 	return (
 		<View style={styles.container}>
-			<Entypo name="home" size={32} color={Colors.white} />
-			<Entypo name="magnifying-glass" size={32} color={Colors.white} />
-			<Entypo name="menu" size={40} color={Colors.white} />
+			<TouchableWithoutFeedback
+				onPress={() => navigation.replace("SearchScreen")}>
+				<AntDesign name="search1" size={32} color={Colors.white} />
+			</TouchableWithoutFeedback>
+			<TouchableWithoutFeedback
+				onPress={() => navigation.replace("FeedScreen")}>
+				<AntDesign name="home" size={32} color={Colors.white} />
+			</TouchableWithoutFeedback>
+			<TouchableWithoutFeedback
+				onPress={() => navigation.replace("SettingsScreen")}>
+				<AntDesign name="bars" size={40} color={Colors.white} />
+			</TouchableWithoutFeedback>
 		</View>
 	);
 }
@@ -16,6 +27,7 @@ function NavBar(props) {
 const styles = StyleSheet.create({
 	container: {
 		height: 50,
+		width: "100%",
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-around",

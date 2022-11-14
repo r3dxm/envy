@@ -6,10 +6,13 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 function PostCard(props) {
 	return (
 		<View style={styles.container}>
-			<View style={styles.postContent}>
+			<View style={styles.postTitleContainer}>
 				<Text style={styles.postTitle}>Very interesting title</Text>
-				<View style={styles.postImage}></View>
 			</View>
+			<Text style={styles.postText}>
+				this is a long text to see how the ui reacts to long texts and this
+				should be very long to see the effects so im just going on.
+			</Text>
 			<View style={styles.postStats}>
 				<View style={styles.likeContainer}>
 					<AntDesign name="hearto" size={20} color={Colors.black} />
@@ -26,29 +29,39 @@ function PostCard(props) {
 
 const styles = StyleSheet.create({
 	container: {
+		alignItems: "center",
+		width: "98%",
 		margin: 5,
-		padding: 20,
-		height: 120,
-		width: "90%",
-		borderRadius: 10,
-		backgroundColor: Colors.red,
+		borderColor: Colors.pastel_pink,
+		borderWidth: 2,
+		borderRadius: 15,
+		backgroundColor: Colors.white,
 	},
-	postContent: {
-		flexDirection: "row",
-		justifyContent: "space-between",
+	postTitleContainer: {
+		width: "98%",
+		marginTop: 5,
+		justifyContent: "center",
+		backgroundColor: Colors.pastel_pink,
+		borderRadius: 15,
 	},
 	postTitle: {
 		fontSize: 20,
 		fontWeight: "bold",
+		padding: 10,
+		color: Colors.white,
 	},
-	postImage: {
-		height: 50,
-		width: 50,
-		backgroundColor: Colors.black,
+	postText: {
+		padding: 10,
+		fontSize: 15,
 	},
 	postStats: {
+		width: "98%",
 		flexDirection: "row",
 		alignItems: "center",
+		borderRadius: 15,
+		padding: 5,
+		marginTop: 5,
+		marginBottom: 5,
 	},
 	postStatsText: {
 		margin: 10,

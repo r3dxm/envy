@@ -5,8 +5,10 @@ import Colors from "../libraries/Colors";
 function UserCard(props) {
 	return (
 		<View style={styles.container}>
-			<View style={styles.profilePicture}></View>
-			<Text style={styles.profileName}>RandomUser</Text>
+			<View style={styles.profile}>
+				<View style={styles.profilePicture}></View>
+				<Text style={styles.profileName}>RandomUser</Text>
+			</View>
 			<Text style={styles.profileStats}>120k followers @instagram</Text>
 			<Text style={styles.profileStats}>2.2m envy rating</Text>
 		</View>
@@ -15,21 +17,39 @@ function UserCard(props) {
 
 const styles = StyleSheet.create({
 	container: {
-		height: 175,
-		width: "90%",
+		width: "98%",
+		marginTop: 20,
 		borderRadius: 10,
+		backgroundColor: Colors.pastel_pink,
+		padding: 5,
+	},
+	profile: {
+		height: 70,
+		widht: "80%",
+		borderRadius: 15,
+		paddingLeft: 10,
+		flexDirection: "row",
+		alignItems: "center",
 		backgroundColor: Colors.white,
-		padding: 20,
 	},
 	profilePicture: {
-		height: 70,
-		width: 70,
-		borderRadius: 100,
+		height: 50,
+		width: 50,
+		borderRadius: 15,
 		backgroundColor: Colors.black,
 	},
 	profileName: {
-		fontSize: 32,
+		fontSize: 24,
 		fontWeight: "bold",
+		color: Colors.pastel_pink,
+		paddingLeft: 10,
+	},
+	profileStats: {
+		paddingLeft: 15,
+		marginTop: 5,
+		marginBottom: 5,
+		color: Colors.white,
+		fontSize: 14,
 	},
 });
 
